@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Diagnosis of trigonometric quadrant | Problem Solve by Mahathir</title>
+</head>
+<body>
+
+
+<style type="text/css">
+.container {
+	height:300px;
+	width:100%;
+	position:relative;
+	border:2px solid black;
+}
+#input{
+	border:5px solid black;
+	padding:10px;
+	border-radius:20px;
+	text-align:center;
+	font-size:30px;
+	position:absolute;
+	top:40%;
+	left:50%;
+	transform:  translate(-50%,  -50%);
+}
+#input:hover {
+	border-color:nevy;
+}
+#output {
+	position:absolute;
+	top:55%;
+	left:50%;
+	transform:  translate(-50%,  -50%);
+}
+</style>
+
+
+
+<div class="container" >
+<input type="number" id="input" oninput="myF()" placeholder="Enter Dgree" ></input>
+<br>
+<h1 id="output">Output</h1>
+</div>
+
+
+
+<script type="text/javascript">
+function myF (){
+var dgree = document.querySelector("#input").value;
+if (dgree > 270){
+a = dgree / 90 | 0;
+b = a - 1;
+c = b / 4 | 0;
+d = 4 * c;
+e = a - d;
+document.querySelector("#output").innerHTML = dgree + "° = " + e +" Quadrant" ;
+}
+else {
+	if(dgree < 90){
+		document.querySelector("#output").innerHTML = dgree + "° = 1 Quadrant" ;
+	}
+	else if (dgree < 180 && dgree > 90 ){
+		document.querySelector("#output").innerHTML = dgree + "° = 2 Quadrant" ;
+	}
+	else {
+		document.querySelector("#output").innerHTML = dgree + "° = 3 Quadrant" ;
+	}
+}
+}
+</script>
+
+
+</body>
+</html>
