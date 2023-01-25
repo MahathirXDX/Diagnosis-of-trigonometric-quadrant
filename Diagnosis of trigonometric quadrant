@@ -4,8 +4,6 @@
 <title>Diagnosis of trigonometric quadrant | Problem Solve by Mahathir</title>
 </head>
 <body>
-
-
 <style type="text/css">
 .container {
 	height:300px;
@@ -29,38 +27,61 @@
 }
 #output {
 	position:absolute;
-	top:55%;
+	top:60%;
+	left:50%;
+	transform:  translate(-50%,  -50%);
+}
+#output1 {
+	position:absolute;
+	top:80%;
 	left:50%;
 	transform:  translate(-50%,  -50%);
 }
 </style>
-
-
-
 <div class="container" >
-<input type="number" id="input" oninput="myF()" placeholder="Enter Dgree" ></input>
+<input type="text" id="input" oninput="myF()" placeholder="Enter Dgree" ></input>
 <br>
 <h1 id="output">Output</h1>
+<br>
+<h1 id="output1">Log</h1>
 </div>
-
-
 
 <script type="text/javascript">
 function myF (){
 var dgree = document.querySelector("#input").value;
 if (dgree > 270){
-a = dgree / 90 | 0;
+a = dgree / 90 ;
 b = a - 1;
 c = b / 4 | 0;
 d = 4 * c;
 e = a - d;
-document.querySelector("#output").innerHTML = dgree + "° = " + e +" Quadrant" ;
+document.querySelector("#output1").innerHTML = "E  = " + e ;
+if (e>4){
+document.querySelector("#output").innerHTML = dgree + "° = 1 Quadrant" ;
+}
+else if (e<4.1 && e>1){
+	if(e>3) {
+	document.querySelector("#output").innerHTML = dgree + "° = 4 Quadrant" ;
+	}
+	else if(e<3.1 && e>2){
+	document.querySelector("#output").innerHTML = dgree + "° = 3 Quadrant" ;
+	}
+	else {
+	document.querySelector("#output").innerHTML = dgree + "° = 2 Quadrant" ;
+	}
 }
 else {
-	if(dgree < 90){
+document.querySelector("#output").innerHTML = dgree + "° = 1 Quadrant" ;
+}
+}
+
+
+
+else {
+	if(dgree < 91){
 		document.querySelector("#output").innerHTML = dgree + "° = 1 Quadrant" ;
 	}
-	else if (dgree < 180 && dgree > 90 ){
+	else if (dgree < 181 && dgree > 90 ){
 		document.querySelector("#output").innerHTML = dgree + "° = 2 Quadrant" ;
 	}
 	else {
@@ -69,7 +90,5 @@ else {
 }
 }
 </script>
-
-
 </body>
 </html>
